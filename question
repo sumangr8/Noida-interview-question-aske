@@ -98,4 +98,9 @@ $this->session->has_userdata('some_name');
 or
 isset($_SESSION['some_name'])
 
+How to print last Query In Codeigniter
+$this->db->last_query();
 
+$qry=$this->db->query("select * from login");
+return $qry->result()  // return result as an object form
+return $qry->result_array()  // return result as an array form
