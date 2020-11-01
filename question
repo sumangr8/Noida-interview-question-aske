@@ -1,0 +1,101 @@
+.htaccess : htaccess is a configuration file. 
+jab kavi ham appache server ko start karte hai tab server
+isko find karta hai or iske under jo v mention kiya rahta hai
+uske anusar apache server task perform karta hai.
+simple way me bole to .htaccess appache server ko instruction
+deta hai ki aapko kya karna hai
+
+Example : 
+mujhe index file ko sabse pahle run nahi karwana hai.
+Code : 
+RewriteEngine On
+DirectoryIndex about.php
+
+
+
+iska matlab ye hai ki jab kavi mai url me domain name ke 
+bad my liku to wo contact ke page pe jana chahiye
+Code: 
+RewriteEngine On
+RewriteRule ^my?$ contact.php  
+
+
+
+mai chahta hu ki koi v mere directory file ko access na kar sake. 
+exmalple image folder.agar uske under index ka page nahi hai to us 
+directory ko access kar sakte hai. to isko rokne ke liye image filder
+me .htaccess ka file create karke ye code ka use karenge. pic ya page ka
+name pata hone par v access nahi kar sakte hai. agar mai isko main directory
+me dal du to koi v page access nahi hoga. savi pe server error ka msg aayega
+
+Code : 
+RewriteEngine On
+Options All-Indexes
+
+
+
+Primary Key :-
+It can not contain null value.
+Only One Primary key exists in one table
+It Help to make a Unique Row
+
+Unique key:- 
+It contain only one null value
+More then one unique key exists in one table
+It help to make a unique column
+
+
+
+
+
+
+
+
+
+Find 4 highest value :-
+
+select * from table1 t1 where 4-1=(select count(distinct slot_no) from table1 t2 where t2.slot_no > t1.slot_no) 
+
+
+<?php
+$x = 5;
+echo $x;     //5
+echo "<br />";
+echo $x+++$x++;   //11
+echo "<br />";
+echo $x;    // 7
+echo "<br />";
+echo $x---$x--;   //1
+echo "<br />";
+echo $x;  //5
+?>
+
+
+<?php
+$x = 3 + "15%" + "$25";
+echo  $x; //18
+?>
+
+
+How to get Last Insert Id In Codeigniter
+return $this->db->insert_id();
+
+How to get last insert Id in PHP
+<?php
+$qry=mysqli_query($con,"insert into login (name) values ('life')");
+echo $last_id = mysqli_insert_id($con);
+?>
+
+How to Use Session In Codeigniter
+$this->session->set_userdata("sess_name","a@gmail.com");
+Get session :-
+$this->session->userdata("sess_name");
+desory session :-
+$this->session->unset_userdata('sess_name');
+
+Check session vlue exists or not :
+$this->session->has_userdata('some_name');
+or
+isset($_SESSION['some_name'])
+
+
