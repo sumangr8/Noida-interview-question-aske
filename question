@@ -190,3 +190,17 @@ CSV
 Merge
 Archive
 Blackhile
+
+
+Trigger :-
+Here my1 and my2 is table :-
+Syntex:-
+
+DELIMITER //
+CREATE TRIGGER tr_mytrigger
+AFTER INSERT ON my1 
+FOR EACH ROW
+BEGIN
+INSERT INTO my2 VALUES(null,'insert success');
+END //
+DELIMITER ;
