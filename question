@@ -146,6 +146,9 @@ rakhte hai or use karte hai.
 How to Create A view
 CREATE VIEW neharecord AS SELECT * FROM `login` WHERE id=1; 
 
+How to show view record 
+select * from neha
+
 How to Rename  View :- 
 RENAME TABLE neharecord TO neha; 
 
