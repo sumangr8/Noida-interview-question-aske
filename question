@@ -174,3 +174,16 @@ Now I  want To  see  how many index  applay on a table
  Synatex:SHOW INDEX  FROM login; 
 Now I  Want  to delete index : 
 Syntax:-- DROP INDEX  std_dob  ON login;
+
+
+Storage engine:-
+
+Storage engine ek type ka software hai jo 
+hamare query ko run karwata hai.type
+Innodb
+Myisam
+Memory
+CSV
+Merge
+Archive
+Blackhile
