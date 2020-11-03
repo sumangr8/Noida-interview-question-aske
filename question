@@ -45,7 +45,11 @@ More then one unique key exists in one table
 It help to make a unique column
 
 
-
+How to get last insert Id in PHP
+<?php
+$qry=mysqli_query($con,"insert into login (name) values ('life')");
+echo $last_id = mysqli_insert_id($con);
+?>
 
 
 
@@ -77,20 +81,21 @@ echo  $x; //18
 ?>
 
 
+
+
+
+
+Codeigniter:-
+
 How to get Last Insert Id In Codeigniter
 return $this->db->insert_id();
 
-How to get last insert Id in PHP
-<?php
-$qry=mysqli_query($con,"insert into login (name) values ('life')");
-echo $last_id = mysqli_insert_id($con);
-?>
 
 How to Use Session In Codeigniter
 $this->session->set_userdata("sess_name","a@gmail.com");
 Get session :-
 $this->session->userdata("sess_name");
-desory session :-
+destory session :-
 $this->session->unset_userdata('sess_name');
 
 Check session vlue exists or not :
@@ -104,3 +109,68 @@ $this->db->last_query();
 $qry=$this->db->query("select * from login");
 return $qry->result()  // return result as an object form
 return $qry->result_array()  // return result as an array form
+
+num_rows:-total row show karta hai
+$this->db->where('EmpID >=', 5);
+$query = $this->db->get('Employees');
+echo $query->num_rows();
+// Outputs, 4
+
+
+count_all :-
+echo $this->db->count_all('Employees');
+// Outputs, 8
+
+
+count_all_results():-
+$this->db->select('*');
+$this->db->from('Employees');
+$this->db->like('Designation', 'Manager');
+echo $this->db->count_all_results();
+// Outputs, 2
+
+Rows():- sirf one row show karta hai
+
+
+
+
+
+
+
+
+SQL questions
+SQL View :- Sql view ke through hamlog complex
+query ko single query me create karke view me
+rakhte hai or use karte hai.  
+
+How to Create A view
+CREATE VIEW neharecord AS SELECT * FROM `login` WHERE id=1; 
+
+How to Rename  View :- 
+RENAME TABLE neharecord TO neha; 
+
+How To edit view :- 
+ALTER VIEW neha AS SELECT * FROM `login` WHERE id=2; 
+
+How to Drop View :- 
+DROP VIEW neha; 
+
+
+SQL index:--
+
+Jab hamlog bahut  sare data  me record  search
+ karte hai to  query ko result  fetch karne
+ me bahut  time lag  jata  hai.  
+Isko  dur  karne ke liye index ka  use karte  
+hai. 
+Ex:ek table  hai  jisme name,email,pass,dob…..
+or bahut sare column Ab mai chehta hu  ki  
+waise record  search  karu  jiska dob  1990  
+se jyada hai.to us case  me  dob  ka  index  
+bana  lenge. 
+Syntex  : CREATE INDEX std_dob  ON  login (dob) 
+
+Now I  want To  see  how many index  applay on a table
+ Synatex:SHOW INDEX  FROM login; 
+Now I  Want  to delete index : 
+Syntax:-- DROP INDEX  std_dob  ON login;
