@@ -1,0 +1,173 @@
+Str_split:-
+Syntax:- Str_split(“string”,lenght);
+<?php
+$str="Hello";
+$a=str_split($str);
+echo "<pre>";
+print_r($a);
+?>
+OutPut:-
+Array
+(
+    [0] => H
+    [1] => e
+    [2] => l
+    [3] => l
+    [4] => o
+)
+
+
+
+(2) Chunk_split:-
+Syntax:- chunk_split(string,length,end);
+<?php
+$str="Hello";
+$a=chunk_split($str,2,'--');
+echo $a;
+?>
+Output:-
+He--ll--o—
+
+
+
+
+(3) strtolower
+<?php
+$str="Hello";
+$a=strtoupper($str);
+echo $a;
+?>
+OutPut:- HELLO
+
+
+
+(4) strtoupper
+	<?php
+$str="Hello";
+$a=strtolower($str);
+echo $a;
+?>
+Output :- hello
+
+
+
+(5) ucfirst :- Sentence ka first letter capital
+<?php
+$str="hello world";
+$a=ucfirst($str);
+echo $a;
+?>
+Output :- Hello world 
+
+
+
+(6) ucwords :- Her word ka first word capitl
+<?php
+$str="hello world";
+$a=ucwords($str);
+echo $a;
+?>
+Output :- Hello World
+
+
+
+(7) lcfirst :- String ka first character small
+<?php
+$str="Hello World";
+$a=lcfirst($str);
+echo $a;
+?>
+Output :- hello World
+
+
+
+(8) strlen :-
+<?php
+$str="Hello World";
+$a=strlen($str);
+echo $a;
+?>
+Output :- 11
+
+
+
+(9) str_word_count() :-
+<?php
+$str="Hello World";
+$a=str_word_count($str);
+echo $a;
+?>
+Output:- 2
+
+
+
+(10) substr_count :- string me word search karta hai
+<?php
+$str="Hello World";
+$a=substr_count($str,"World");
+echo $a;
+?>
+Output :- 1
+   	
+    
+ (11) strops :-
+<?php
+$str="Hello World";
+$a=strpos($str,"World");
+echo $a;
+?>
+Output:- 6
+
+
+
+(12) substr:-
+<?php
+$str="I Love php, I love php too";
+$a=substr($str,7,15);
+echo $a;
+?>
+Output:- php, I love php
+
+
+
+(13) str_replace
+<?php
+$str="I Love php, I love php too";
+$a=str_replace("php","Sql",$str);
+echo $a;
+?>
+OutPut:- I Love Sql, I love Sql too
+
+
+
+
+
+(14) strrev()
+	<?php
+	$str="hello";
+	$a=strrev($str);
+	echo $a;
+	?>
+	Output:- olleh
+
+
+(15) str_shuffle :- change hote rahta hai
+	<?php
+	$str="hello";
+	$a=str_shuffle($str);
+	echo $a;
+	?>
+	Output:- llohe
+
+
+
+(16) trim :-
+	<?php
+	$str="hello";
+	$a=trim($str,"ho");
+	echo $a;
+	?>
+	Output:- ell
+
+
+(17) htmlentities :- special character ko entities code me convert kata hai
