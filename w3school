@@ -1,0 +1,77 @@
+Constant :- 
+A constant is an identifier (name) for a simple value.
+The value cannot be changed during the script.
+Constants are automatically global and 
+can be used across the entire script.
+
+<?php
+define("GREETING", "Welcome to W3Schools.com!");
+
+function myTest() {
+    echo GREETING;
+}
+myTest();
+?>
+
+
+------------------------------------------
+variable :-
+PHP has three different variable scopes:
+local :- jo function ke underdefine and access hote hai.
+global
+<?php
+$x = 5;
+$y = 10;
+function myTest() {
+    global $x, $y;
+    echo $y = $x + $y;
+}
+myTest();
+?>
+
+static :- variable ke scope ko khatam nahi hone deta hai
+without static
+<?php
+	function test()
+	{
+		$a=0;
+		$a++;
+		echo $a."<br>";
+	}
+	test();
+	test();
+	?>
+  output:- 
+  1
+  1
+  
+  With Static
+  <?php
+	function test()
+	{
+		static $a=0;
+		$a++;
+		echo $a."<br>";
+	}
+	test();
+	test();
+	?>
+  output:-
+  1
+  2
+------------------------------------------------------------
+$_SERVER :- 
+echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+?>
+---------------------------------------------------------
+
