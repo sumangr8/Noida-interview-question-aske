@@ -1,0 +1,359 @@
+OOP:-Object Oriented programming is a technique to design your application.
+Application could be any type like web based application, window based application
+---------------------------------------
+Class:- Class is blueprint of object. Class is something which defines your object. 
+For example Your Class is car, And your Honda Car is object of car class
+------------------------------------------
+
+Object :-
+Any Thing is the world is an object. Look around and you can find lots of object.
+Your laptop,pc,car every thing is an object. Every Object has two thing (1) Properties and (2) behavior.
+Your Car has property (color, brand name) and behaviors (it can forward and backward).
+--------------------------------------
+Property ko variable ya data member v bol skate hai
+Public $abc=”Hello”;
+Yaha $abc ko variable bolte hai
+-----------------------------------
+
+
+Final Method :- A final method can not be override in child class.
+
+Final Class:- A final class can not be inherite by child clas
+-----------------------------------
+
+Constructor:
+Constructor is a special type of function which will be called automatically whenever you create a object of class
+function __construct()
+{
+	parent::__construct();
+}
+
+--------------------------------------------
+
+Destruct:--
+
+Destructor is a special type of function which will be called automatically 
+whenever any object is deleted or goes out of scope.
+A destructor is called when the object is destructed or the script is stopped or exited.
+If you create a __destruct() function, PHP will automatically call this function at the end of the script.
+
+class myClass{
+	function __construct(){
+	// Define logic in constructor
+    }
+    function __destruct(){
+	// this is destructor 
+    }
+}
+-----------------------------------------
+
+Public:- public method or variable can be accessible from anywhere. I mean from inside class, outside class and in child class also.
+
+Protected:- protected method or variable can be accessible from inside class and in child class also.
+
+Private:- private method or variable can be accessible from only inside class
+
+--------------------------------------
+$This:-
+The $this is a keyword which represents the current object or current instance of class.
+class Demo
+{
+	public $first=10;
+	public $second=12;
+	function add()
+	{
+		$sum=$this->first+$this->second;
+		echo $sum;
+	}
+}
+$obj=new Demo;
+$obj->add();
+-----------------------------------
+
+Static method and property:- static method and property in php can be directly accessible without creating object of class.
+Static :-
+<?php
+class Demo
+{
+	public static $name="suman";
+	public static function add($a,$b)
+	{
+		echo $a+$b."<br>";
+	}
+	public static function abc()
+	{
+		echo self::$name;
+	} 
+}
+class childClass extends Demo
+{
+	public static function def()
+	{
+		//parent class ke variable or method ko use karne ke liye parent keyword use karte hai
+
+		echo parent::$name;
+	} 
+}
+// Demo::add(9,6);
+// Demo::abc();
+childClass::def();
+?>
+----------------------------------------------
+
+Inheritance:-
+Inheritance is a concept where one class shares the structure and behavior defined in another class. 
+If Inheritance applied to one class is called Single Inheritance, and if it depends on multiple classes, 
+then it is called multiple Inheritance.
+
+------------------------------------------
+
+Interface :- 
+Interface is a abstract Class which can not directly initialized.
+
+any class that implement this interface must use implements keyword and all the methods that are declared in the class must be defined here.
+
+<?php
+interface a
+{
+	public function sum($a,$b);
+}
+interface b
+{
+	public function mult($b,$c);
+}
+
+class Demo implements a,b
+{
+	public function sum($a,$b)
+	{
+		echo $a+$b. "<br>";
+	}
+	public function mult($c,$d)
+	{
+		echo $c*$d;
+	}
+}
+$obj=new Demo();
+$obj->sum(12,2);
+$obj->mult(12,2);
+?>
+
+---------------------------------------------
+
+
+Abstract Class :-
+
+Abstract class are those class which can not be directly initialized, It is always created for Inherit purpose 
+Every Abstract Class Has Two propert:-
+(1) Use Abstract Keyword Befor Class
+(2) Min One Abstract Method Define In Abstract Class
+
+<?php
+abstract class Abc
+{
+	public $name="suman";
+	abstract function demo($a,$b);
+}
+class Def extends Abc
+{
+	public function demo($a,$b)
+	{
+		echo $a+$b."<br>";
+		echo $this->name;
+	}
+}
+$obj=new Def();
+$obj->demo(10,20);
+?>
+
+-------------------------------------------
+
+Method chaining :-
+ 
+<?php
+class Demo
+{
+	function first()
+	{
+		echo "First Function";
+		return $this;
+		//for chaining method
+	}
+
+	function second()
+	{
+		echo "Second Function";
+		return $this;
+	}
+
+	function third()
+	{
+		echo "Third Function";
+		return $this;
+	}
+}
+$obj=new Demo();
+// Normal way
+// $obj->first();
+// $obj->second();
+// $obj->third();
+
+// Use chaining method
+$obj->first()->second()->third()
+?>
+-----------------------------------------
+
+trait :-
+If One function use in multiple class then you use trait
+
+<?php
+trait test
+{
+	public function hello()
+	{
+		echo "This Is Hello Message";
+	}
+}
+class A
+{
+	use test;
+}
+class B
+{
+	use test;
+}
+class C
+{
+	use test;
+}
+$obj=new A();
+$obj->hello();
+?>
+
+-----------------------------------------
+
+
+Namespace
+
+if you want to add same  two class or function in one page then you can use namespace.
+
+for example:-
+first.php        second.php   
+class test       class test
+{                {
+
+}                }
+
+Now you want to include first and second page in any third page.
+
+Then You give A error becouse both page's class name are same.
+
+Now Fix The Error
+
+first.php           second.php
+namespace first     namespace second 
+class test          class test
+{                   {
+
+}                   }
+
+Now In Third Page
+include("first.php");
+include("second.php");
+Now We create first page class object
+$obj =new first\test();
+
+----------------------------------
+
+
+Encapsulation :-
+Encapsulation Is Used To Hide Or Safe information(data).
+Encapsulation is defined as wrapping up of data and information under a single unit.
+Consider a real life example of encapsulation, in a company there are different sections like the accounts section, finance section, sales section etc. 
+The finance section handles all the financial transactions and keep records of all the data related to finance. 
+Similarly the sales section handles all the sales related activities and keep records of all the sales. 
+Now there may arise a situation when for some reason an official from finance section needs all the data about sales in a particular month. 
+In this case, he is not allowed to directly access the data of sales section. 
+He will first have to contact some other officer in the sales section and then request him to give the particular data.
+
+Ex In Programing Language:-
+Mana Ki $a name ka ek varable pahle banaya hu. or galti se uske bad v $a name ka variable phir se define kiya to us case me data $a variable ka value change ho jayega. 
+isko dur karne ke liye ham hamesa class ya function me variable define karenge to wo usi class ya function ke under uska scope rahega. 
+dusri bar define karne par uska value change nahi hoga
+
+--------------------------------
+
+Abstract VS Interface:-
+
+Abstract class Demo
+{
+	function a()
+	{
+		//declar or define dono
+		echo "This Is A Function";
+	}
+	abstract function b();
+	//only declare
+}
+---
+interface Demo
+{
+	function a();
+	// Only declear kar sakte hai define nahi
+}
+
+
+Abstract Class ke Under abstract method or non-abstract method  dono bana skate hai.
+But Interface me sirf abstract method bana sakte hai
+
+Abstract Class ko sirf ek class me inherit(extends) kar sakte hai.
+But Interface class ko multiple class me inherit kar sakte hai
+
+Agar aap class me ek abstract method banate hai tab aapko class ko v abstract bana hoga
+
+Abstract class ke under function ko declare or define dono kar sakte hai
+but Interface ke under sirf declear kar sakte hai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
