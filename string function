@@ -1,3 +1,77 @@
+How Word count:-
+
+$string = "php count specific characters in string"; 
+echo substr_count($string,"php");
+
+
+<?php
+$text="php - count number of character occurrences in a string 
+in PHP without using function php";
+$searchchar="php";
+$count="0";
+ 
+for($i="0"; $i<strlen($text); $i=$i+1){
+     
+    $str = explode(' ', $text);
+ 
+    if($str[$i] == $searchchar){
+    
+       $count=$count+1;
+    }
+ 
+}
+echo $count
+?>
+
+
+---------------------------------
+Total Vowel Count:-
+
+$someString="Hello World";
+$Vowels = substr_count($someString, 'a')+substr_count($someString, 'e')+substr_count($someString, 'i')+substr_count($someString, 'o')+substr_count($someString, 'u');
+echo $Vowels;
+
+
+$someString="hello";
+$matches = preg_match_all('/[aeiou]/i', $someString);
+echo $matches;
+
+---------------------------------
+Total Character count:-
+$str="heleloo";
+$a=str_split($str);
+$c=array_count_values($a);
+print_r($c);
+---------------------------------
+How to word print in array:-
+$str="hello";
+$a=str_split($str);
+print_r($a);
+---------------------------------
+Character Count:-
+<?php
+$str="hello";
+$count=0;
+for($i=0;$i<strlen($str);$i++)
+{
+	if($str[$i]=='l')
+	{
+		$count=$count+1;
+	}
+}
+echo $count;
+?>
+------------------------------
+Find Index:-
+<?php
+$str="is language php";
+$a=strpos($str, "php");
+echo $a;
+Output:-12
+?>
+------------------------------
+
+
 Str_split:-
 Syntax:- Str_split(“string”,lenght);
 <?php
